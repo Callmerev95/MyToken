@@ -1,25 +1,49 @@
-# MyToken
-A simple ERC-20 token implementation using Hardhat. This project demonstrates basic token functionalities such as minting, transferring, and querying balances.
+# 🚀 MyToken  
 
-## 📌 Features
+A simple ERC-20 token implementation using Hardhat. This project demonstrates basic token functionalities such as minting, transferring, and querying balances.  
 
-	•	Mint tokens (Owner only)
-	•	Transfer tokens between accounts
-	•	Check account balances
-	•	Deployable on local Hardhat Network
+![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)  
+![Solidity](https://img.shields.io/badge/solidity-^0.8.17-363636?logo=solidity)  
 
-## 🚀 Getting Started
+---
 
-1️⃣ Prerequisites
+## 📌 Features  
+```
+|         Feature           |               Description              |
+|---------------------------|----------------------------------------|
+|🏗  Mint Tokens            | Users can securely transfer tokens     |
+|🔄 Transfer               | Users can securely transfer tokens     |
+|🔍 Check Balance          | Retrieve the balance of any account    |
+|🚀 Deployable on Hardhat  | Easily deploy the contract for testing |
+```
+---
 
->Ensure you have the following installed:
+## 📂 Project Structure  
 
-	•	Node.js (v16 or later)
-	•	Hardhat
+```bash
+MyTokenProject/
+│── contracts/
+│   ├── MyToken.sol        # The main ERC-20 token contract
+│── scripts/
+│   ├── deploy.js          # Deployment script for the contract
+│── node_modules/          # Installed dependencies
+│── hardhat.config.js      # Hardhat configuration file
+│── package.json           # Project dependencies and scripts
+│── README.md              # Project documentation
+```
 
-2️⃣ Install Dependencies
+---
 
->Clone this repository and install the required packages:
+## 🚀 Getting Started  
+
+### 1️⃣ Prerequisites  
+Make sure you have the following installed:  
+- **Node.js** (v16 or later)  
+- **Hardhat**  
+- **Remix IDE (optional for web-based deployment)**  
+
+### 2️⃣ Install Dependencies  
+Clone this repository and install the required packages:  
 ```sh
 git clone https://github.com/your-username/MyTokenProject.git
 ```
@@ -27,57 +51,57 @@ git clone https://github.com/your-username/MyTokenProject.git
 
 * npm install
 
-## ⚙️ Usage
 
-#### **3️⃣ Compile the Contract**  
->Run the following command to compile the smart contract:  
+---
 
+## ⚙️ Usage  
+
+### 🔨 **Compile the Contract**  
 ```sh
 npx hardhat compile
-```  
+```
 
-#### **4️⃣ Run a Local Blockchain (Hardhat Network)**  
->To test the contract locally, start a local blockchain:  
-
+### 🏗 **Run a Local Blockchain**  
 ```sh
 npx hardhat node
-```  
+```
 
-#### **5️⃣ Deploy the Contract (Using Hardhat)**  
->In a new terminal window, deploy the contract to the local Hardhat Network:  
-
+### 🚀 **Deploy the Contract**  
 ```sh
 npx hardhat run scripts/deploy.js --network localhost
-```  
+```
 
->Once deployed, the contract address will be displayed in the terminal.  
-
----
-
-## **🚀 Alternative Deployment: Using Remix Ethereum IDE**  
-
->If you prefer deploying the contract via **Remix**, follow these steps:  
-
-1️⃣ Open **[Remix Ethereum IDE](https://remix.ethereum.org/)**.  
-2️⃣ Click on **File Explorer** (📂 icon) and create a new file: **MyToken.sol**.  
-3️⃣ Copy and paste the contract code from `contracts/MyToken.sol` into the new file.  
-4️⃣ Go to **Solidity Compiler** (⚙️ icon), select the Solidity version (e.g., `0.8.17`), and click **Compile MyToken.sol**.  
-5️⃣ Switch to **Deploy & Run Transactions** (🚀 icon), select **Injected Provider - Metamask** or **Remix VM (London)** as the environment.  
-6️⃣ Click **Deploy**, and Remix will deploy the contract on your selected network.  
-
-You can now interact with your token contract via Remix's UI.  
+### 🛠 **Deploy via Remix IDE**  
+1. Open [Remix IDE](https://remix.ethereum.org/)  
+2. Upload `MyToken.sol` to Remix  
+3. Go to the **Solidity Compiler** tab and click **Compile**  
+4. Navigate to the **Deploy & Run Transactions** tab  
+5. Select **Injected Web3** and connect to MetaMask  
+6. Click **Deploy** and wait for the contract to be deployed  
 
 ---
 
-### **🔗 Deploy to a Testnet (Optional)**  
-If you want to deploy the contract to a testnet (e.g., **Goerli** or **Sepolia**), configure `hardhat.config.js` with a provider like **Alchemy** or **Infura**, and then run:  
+## 📝 Smart Contract Overview  
 
+### `MyToken.sol` (Located in `contracts/`)  
+
+```solidity
+function mint(address recipient, uint256 amount) public onlyOwner;
+function transfer(address recipient, uint256 amount) public returns (bool);
+function balanceOf(address account) public view returns (uint256);
+```
+
+---
+
+## 🔗 Deploy to a Testnet (Optional)  
+
+If you want to deploy the contract to a testnet (e.g., Goerli, Sepolia), configure `hardhat.config.js` and use:  
 ```sh
 npx hardhat run scripts/deploy.js --network goerli
-```  
+```
+**Note:** Make sure your wallet has test ETH for gas fees.  
 
-Ensure you have test ETH in your wallet for gas fees.  
-🚀
+---
 
 # Contributing
 
@@ -86,6 +110,5 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+## 📜 License  
+This project is licensed under the **MIT License**.
